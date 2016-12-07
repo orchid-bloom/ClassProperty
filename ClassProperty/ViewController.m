@@ -7,16 +7,25 @@
 //
 
 #import "ViewController.h"
+#import "User.h"
 
 @interface ViewController ()
-
+@property(nonatomic,strong)User *user;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    for (int i = 0 ; i < 3; i ++) {
+        self.user = [[User alloc] init];
+        
+        NSLog(@"UUID  %@ >> AGE >>%ld",User.uuid,(long)User.age);
+        
+        [User creatUUID];
+        NSLog(@"%@",User.uuid);
+    }
 }
 
 
